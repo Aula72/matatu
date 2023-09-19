@@ -29,7 +29,10 @@ function write_2_file($file, $txt){
 }
 function create_token($user){
     $token = md5($user.str_shuffle( date('m/d/Y h:i:s a', time())));
-
+    $r = make_query("select * from user_token where user_id=:id",$user);
+    if($r->rowCount()>0){
+        make_query("delete from user_token where user_id=:ui",[':ui'=>$user]);
+    }
     make_query("insert into user_token set user_id=:u, token=:i",[':u'=>$user,':i'=>$token]);
 
     return $token;

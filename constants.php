@@ -11,3 +11,9 @@ const DB_PSW = "(KeBERA6669)";
 const DB_NAME = "keberaorganics_matatu";
 
 define('BASE_URL', $_SERVER['HTTP_HOST']);
+
+
+define(SUCCESS, 'was added successful...');
+define(UPDATE, 'was updated successfully...');
+define(DELETE, 'was removed successfully...');
+define(FAIL, 'Operation failed');
