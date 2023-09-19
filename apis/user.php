@@ -55,7 +55,7 @@ switch ($method) {
 	case "GET":
 		$users = make_query("select * from user");
 		$u = [];
-		foreach($user->fetchAll(PDO::FETCH_ASSOC) as $us){
+		foreach($users->fetchAll(PDO::FETCH_ASSOC) as $us){
 			array_push($u, $us);
 		}
 		$msg['users'] = $u;
