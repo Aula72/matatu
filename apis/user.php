@@ -7,7 +7,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
 	case 'POST':
 		$data = json_decode(file_get_contents("php://input"), true);
-		die(json_encode($data));
+		// die(json_encode($data));
 		$username = $data['username'];
 		$user_type = $data['user_type'];
 		$email = $data['email'];
@@ -33,6 +33,7 @@ switch ($method) {
 				// $query = "insert into user set username=$username, user_type=$user_type, email=$email, phone=$phone, fname=$fname, lname=$lname, user_code=$user_code, pwd=$pwd";
 				make_query($q, $p);
 				$msg["status"] = 1;
+				// $msg['token'] = create_token();
 				$msg["message"] = "User registered successfully";
 			}else{
 				$msg["status"] = 0;
