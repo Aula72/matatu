@@ -3,8 +3,8 @@ error_reporting(~E_NOTICE);
 $uri = $_SERVER['REQUEST_URI'];
 $query_string = $_SERVER['QUERY_STRING'];
 
-echo json_encode($_SERVER);
-echo "Sion";
+// echo json_encode($_SERVER);
+// echo "Sion";
 switch($uri){
 	case "/":
 		require_once "views/index.php";
