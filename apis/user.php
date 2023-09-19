@@ -3,7 +3,7 @@ header('Content-type: application/json');
 error_reporting(~E_NOTICE);
 include_once "helper.php";
 $method = $_SERVER['REQUEST_METHOD'];
-get_token_from_id();
+// get_token_from_id();
 switch ($method) {
 	case 'POST':
 		$data = json_decode(file_get_contents("php://input"), true);
