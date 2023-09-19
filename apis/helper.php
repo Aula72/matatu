@@ -47,9 +47,9 @@ function delete_token(){
 function user_exists($user){
 	$x = make_query("select * from user where username=:u or phone=:u or email=:u", [':u'=>$user]);
 	if($x->rowCount()>0){
-		$f = false;
-	}else{
 		$f = true;
+	}else{
+		$f = false;
 	}
 	return $f;
 }
