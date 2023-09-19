@@ -51,6 +51,7 @@ switch ($method) {
 					$msg["status"] = 1;
 					$msg['token'] = create_token($user['id']);
 					$msg["message"] = "Login was successful...";
+					$msg['user_type'] = $user['user_type'];
 				}else{
 					$msg["status"] = 0;
 					$msg["message"] = "Wrong credentials try again...";
@@ -60,6 +61,7 @@ switch ($method) {
 				$msg["message"] = "User does not exist...";
 			}
 		}else{
+			delete_token();
 			$msg["status"] = 1;
 			$msg["message"] = "User logged out successfully...";
 		}

@@ -28,7 +28,8 @@ function write_2_file($file, $txt){
     fclose($myfile);
 }
 function create_token($user){
-    $token = md5($user.date('now'));
+    $token = md5($user.str_shuffle( date('m/d/Y h:i:s a', time())));
+
     make_query("insert into user_token set user_id=:u, token=:i",[':u'=>$user,':i'=>$token]);
 
     return $token;
@@ -43,7 +44,8 @@ function check_user($user){
 }
 
 function delete_token(){
-	
+	$t = $_SERVER['HTTP_AUTH'];
+    make_query("delete from user_token where token=:t",[':t'=>$t]);
 }
 
 function user_exists($user){
