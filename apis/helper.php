@@ -5,7 +5,7 @@ include_once "../connections.php";
 // echo DB_USER;
 // die();
 if(isset($conn)){
-    echo json_encode(["status"=>"Correct!"]);
+    echo json_encode($conn);
 }else{
      echo json_encode(["status"=>"None..."]);
 }
