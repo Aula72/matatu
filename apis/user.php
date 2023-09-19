@@ -7,6 +7,7 @@ get_token_from_id();
 switch ($method) {
 	case 'POST':
 		$data = json_decode(file_get_contents("php://input"), true);
+		die(json_encode($data));
 		$username = $data['username'];
 		$user_type = $data['user_type'];
 		$email = $data['email'];
