@@ -12,7 +12,7 @@ if(isset($conn)){
 die();
 function make_query($q, $p=[]){
 	try{
-        $t = $conn->prepare($q);
+        $t = $conn->prepare($q,[PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
         $t->execute($p);
     }catch(\PDOException $e){
         $err["message"] = $e->getMessage();
