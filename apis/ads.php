@@ -14,11 +14,11 @@ $ad_status = $data['ad_status'];
 switch ($method) {
 	case 'GET':
 		if(isset($_GET['id'])){
-			$ads = make_query('select * from ads where id=:id', [':id'=>$_GET['id']]);
+			$ads = make_query('select * from ad where id=:id', [':id'=>$_GET['id']]);
 			$msg['ad'] = $ads->fetch(PDO::FETCH_ASSOC);
 		}else{
 			$my_adds = [];
-			$ads = make_query('select * from ads');
+			$ads = make_query('select * from ad');
 			foreach($ads->fetchAll(PDO::FETCH_ASSOC) as $ad){
 				array_push($my_adds, $ad);
 			}
