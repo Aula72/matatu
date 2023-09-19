@@ -46,8 +46,10 @@ switch ($method) {
 				$user = make_query("select * from user where username=:usr or phone=:usr or email=:usr",[':usr'=>$username]);
 				$user = $user->fetch(PDO::FETCH_ASSOC);
 				$msg['user'] = $user['pwd'];
+				$msg['pwd'] = $pwd;
 				if(password_verify($pwd,$user['pwd'])){
 					$msg["status"] = 1;
+					$msg['token'] = create_token($user['id']);
 					$msg["message"] = "Login was successful...";
 				}else{
 					$msg["status"] = 0;
