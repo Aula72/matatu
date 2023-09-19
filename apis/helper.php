@@ -62,3 +62,28 @@ function missing_fields($r=[]){
         }
     }
 }
+
+function ad_images($id){
+    $img = make_query("select * from ad_img where ad_id=:id",[":id"=>$id]);
+    $imgs = [];
+    foreach($img->fetchAll(PDO::FETCH_ASSOC) as $t){
+        array_push($imgs, $t);
+    }
+    return $imgs;
+}
+
+function get_token_from_id(){
+
+    if(isset($_SERVER['HTTP_AUTH'])){
+        $t = $_SERVER['HTTP_AUTH'];
+        $f = make_query("select * from user_token where token=:t", [':t'=>$t]);
+        if($f->rowCount()>0){
+            $user_id = $f->fetch(PDO::FETCH_ASSOC);
+            return $user_id['user_id'];
+        }else{
+            die(json_encode(["status"=>0,"message"=>"Authorization token is expired!"]));
+        }
+    }else{
+        die(json_encode(["status"=>0,"message"=>"Authorization error!"]));
+    }
+}
