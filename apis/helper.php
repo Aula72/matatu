@@ -4,6 +4,7 @@ include_once "../connections.php";
 
 
 function make_query($q, $p=[]){
+    global $conn;
 	try{
         $t = $conn->prepare($q,[PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
         $t->execute($p);
