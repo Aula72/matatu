@@ -52,7 +52,11 @@ switch ($method) {
 		break;
 	
 	default:
-		$msg = ["message"=>"Method not allowed", "status"=>0];
+		// delete_token($_SERVER['X_AUTH']);
+
+		$msg["message"]="Method not allowed"; 
+		$msg["status"]=0;
+		$msg['session'] = $_SERVER;
 		break;
 }
 
