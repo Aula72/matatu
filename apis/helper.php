@@ -4,6 +4,12 @@ include_once "../connections.php";
 
 // echo DB_USER;
 // die();
+if(isset($conn)){
+    echo json_encode(["status"=>"Correct!"]);
+}else{
+     echo json_encode(["status"=>"None..."]);
+}
+die();
 function make_query($q, $p=[]){
 	try{
         $t = $conn->prepare($q);
