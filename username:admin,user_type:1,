@@ -1,7 +1,0 @@
-HTTP/1.1 200 OK
-Host: 127.0.0.1:8000
-Date: Tue, 19 Sep 2023 14:09:42 GMT
-Connection: close
-X-Powered-By: PHP/7.4.33
-Content-type: application/json
-
