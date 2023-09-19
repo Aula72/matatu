@@ -43,7 +43,7 @@ switch ($method) {
 			
 		}else if(isset($_GET['login'])){
 			if(user_exists($username)){
-				$user = make_query("select * from user where username=:usr or phone=:usr or email=usr",[':usr'=>$username]);
+				$user = make_query("select * from user where username=:usr or phone=:usr or email=:usr",[':usr'=>$username]);
 				$user = $user->fetch(PDO::FETCH_ASSOC);
 				if(password_verify($user['pwd'], $pwd)){
 					$msg["status"] = 1;
