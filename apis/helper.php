@@ -3,6 +3,7 @@
 include_once "../connections.php";
 
 echo DB_USER;
+die();
 function make_query($q, $p=[]){
 	try{
         $t = $conn->prepare($q);
