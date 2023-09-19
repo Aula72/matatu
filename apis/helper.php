@@ -30,6 +30,8 @@ function write_2_file($file, $txt){
 function create_token($user){
     $token = md5($user.date('now'));
     make_query("insert into user_token set user_id=:u, token=:i",[':u'=>$user,':i'=>$token]);
+
+    return $token;
 }
 
 function check_token($token){
