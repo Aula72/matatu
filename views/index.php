@@ -34,7 +34,14 @@
       </header>
   <!-- header ends here -->
       <main>
-          <div class="side-bar">.</div>
+          <div class="side-bar">
+            <div class="nav">
+                <a class="nav-link active">
+                  <i class="material-icons">home</i>
+                  <span>Home</span>
+                </a>
+            </div>
+          </div>
           <div class="content">.</div>
       </main>
   <!-- Main Body Ends -->
