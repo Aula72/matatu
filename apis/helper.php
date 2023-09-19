@@ -59,7 +59,7 @@ function is_logged(){}
 function missing_fields($r=[]){
     foreach($r as $p){
         // echo $p;
-        if($p==''){
+        if($p==='' || $p===null){
             die(json_encode(['status'=>0, 'message'=>'Some fields are missing!']));
         }
     }

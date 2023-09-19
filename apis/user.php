@@ -20,7 +20,7 @@ switch ($method) {
 		if(isset($_GET['register'])){
 			if(!user_exists($username)){
 				missing_fields([$pwd, $phone, $username, $fname, $lname, $user_type, $user_code]);
-				 $q = "insert into user set username=:username, user_type=:user_type, email=:email,fname=:fname, lname=:lname, user_code=:user_code, pwd=:pwd";
+				 $q = "insert into user set username=:username, user_type=:user_type, email=:email,fname=:fname, lname=:lname, user_code=:user_code,phone=:phone, pwd=:pwd";
 				$p = [
 					":username"=>$username,
 					":user_type"=>$user_type,
@@ -28,7 +28,8 @@ switch ($method) {
 					":fname"=>$fname,
 					":lname"=>$lname,
 					":user_code"=>$user_code,
-					":pwd"=>$pwd
+					":pwd"=>$pwd,
+					":phone"=>$phone
 				];
 				// $query = "insert into user set username=$username, user_type=$user_type, email=$email, phone=$phone, fname=$fname, lname=$lname, user_code=$user_code, pwd=$pwd";
 				make_query($q, $p);
@@ -42,7 +43,15 @@ switch ($method) {
 			
 		}else if(isset($_GET['login'])){
 			if(user_exists($username)){
-
+				$user = make_query("select * from user where username=:usr or phone=:usr or email=usr",[':usr'=>$username]);
+				$user = $user->fetch(PDO::FETCH_ASSOC);
+				if(password_verify($user['pwd'], $pwd)){
+					$msg["status"] = 1;
+					$msg["message"] = "Login was successful...";
+				}else{
+					$msg["status"] = 0;
+					$msg["message"] = "Wrong credentials try again...";
+				}
 			}else{
 				$msg["status"] = 0;
 				$msg["message"] = "User does not exist...";
