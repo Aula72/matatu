@@ -52,7 +52,14 @@ switch ($method) {
 			$msg["message"] = "User logged out successfully...";
 		}
 		break;
-	
+	case "GET":
+		$users = make_query("select * from user");
+		$u = [];
+		foreach($user->fetchAll(PDO::FETCH_ASSOC) as $us){
+			array_push($u, $us);
+		}
+		$msg['users'] = $u;
+		break;
 	default:
 		// delete_token($_SERVER['X_AUTH']);
 
