@@ -1,6 +1,6 @@
 <?php
 
-include_once file_exists("../connections.php")?"../connections.php"?"connections.php";
+include_once file_exists("../connections.php")?"../connections.php":"connections.php";
 
 
 function make_query($q, $p=[]){
