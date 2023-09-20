@@ -12,6 +12,8 @@
     $fileType = $_FILES['the_file']['type'];
     $fileExtension = strtolower(end(explode('.',$fileName)));
 
+    die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension]));
+
     $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
 
     if (isset($_POST['submit'])) {
