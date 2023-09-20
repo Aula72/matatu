@@ -11,7 +11,7 @@ echo json_encode($_SERVER);
 
 // die();
 
-get_token_from_id();
+// get_token_from_id();
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
 $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
 
