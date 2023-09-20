@@ -19,6 +19,10 @@
     $fileName = md5($fileName.rand(1000,9999)).'.'.$fileExtension;
 
     if($type=='user_video'){
+      $user_id = 1;
+      $video_name = $normalText;
+      $video_url = $fileName;
+      make_query("insert into video set user_id=:user_id, video_name=:v, video_url=:url",[':user_id'=>$user_id, ':v'=>$video_name, ":url"=>$video_url]);
       $uploadDirectory .= 'user-videos/';
     }else if($type=='user_audio'){
       $uploadDirectory .= 'user-audios/';
