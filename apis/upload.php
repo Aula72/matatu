@@ -1,11 +1,11 @@
 <?php
-
+header("auth: b37eb06ae70e2daa463988373652af15");
 include_once "helper.php";
 
 $type = $_GET['type'];
 $token = $_GET['_s'];
 // header("auth: $token");
-header("auth: b37eb06ae70e2daa463988373652af15");
+
 header("content-type: application/json");
 echo json_encode($_SERVER);
 
