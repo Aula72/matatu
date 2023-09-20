@@ -4,7 +4,7 @@
 
     $errors = []; // Store errors here
 
-    $fileExtensionsAllowed = ['jpeg','jpg','png']; // These will be the only file extensions allowed 
+    $fileExtensionsAllowed = ['jpeg','jpg','png', 'PNG']; // These will be the only file extensions allowed 
 
     $fileName = $_FILES['the_file']['name'];
     $fileSize = $_FILES['the_file']['size'];
@@ -12,7 +12,7 @@
     $fileType = $_FILES['the_file']['type'];
     $fileExtension = strtolower(end(explode('.',$fileName)));
 
-    die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension]));
+    // die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension]));
 
     $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
 
