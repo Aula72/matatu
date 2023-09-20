@@ -9,7 +9,7 @@ header("auth: b37eb06ae70e2daa463988373652af15");
 header("content-type: application/json");
 echo json_encode($_SERVER);
 
-// die();
+die();
 
 // get_token_from_id();
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
