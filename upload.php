@@ -4,7 +4,7 @@
 
     $errors = []; // Store errors here
 
-    $fileExtensionsAllowed = ['jpeg','jpg','png', 'PNG']; // These will be the only file extensions allowed 
+    $fileExtensionsAllowed = ['jpeg','jpg','png', 'PNG', 'mp4']; // These will be the only file extensions allowed 
 
     $fileName = $_FILES['the_file']['name'];
     $fileSize = $_FILES['the_file']['size'];
