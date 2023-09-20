@@ -6,7 +6,7 @@ $type = $_GET['type'];
 $token = $_GET['_s'];
 header("auth: $token");
 header("content-type: application/json");
-// echo json_encode($_SERVER);
+echo json_encode($_SERVER);
 
 // die();
 
