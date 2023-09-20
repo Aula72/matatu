@@ -74,7 +74,7 @@ if ((($_FILES["file"]["type"] == "video/mp4")
 || ($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/jpeg"))
 
-&& ($_FILES["file"]["size"] < 20000)
+&& ($_FILES["file"]["size"] < 2000000000)
 && in_array($extension, $allowedExts))
 
   {
