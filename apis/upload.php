@@ -1,5 +1,5 @@
 <?php
-    // $currentDirectory = getcwd();
+    $currentDirectory = getcwd();
     $uploadDirectory = "/uploads/";
 
     $errors = []; // Store errors here
@@ -14,7 +14,8 @@
 
     // die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension]));
 
-    $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
+    // $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
+    $uploadPath = $uploadDirectory . basename($fileName); 
 
     if (isset($_POST['submit'])) {
 
