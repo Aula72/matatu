@@ -1,4 +1,6 @@
 <?php
+    include_once "apis/helper.php";
+    $type = isset($_GET['type'])?$_GET['type']:'';
     $currentDirectory = getcwd();
     $uploadDirectory = "/uploads/";
 
@@ -13,7 +15,21 @@
     $fileExtension = strtolower(end(explode('.',$fileName)));
 
     // die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension]));
+    $normalText = $fileName;
+    $fileName = md5($fileName.rand(1000,9999)).'.'.$fileExtension;
 
+    if($type=='user_video'){
+      $uploadDirectory .= 'user-videos/';
+    }else if($type=='user_audio'){
+      $uploadDirectory .= 'user-audios/';
+    }else if($type=='ad_photo'){
+      make_query("insert into ad_img set ad_id=:id, uri=:uri",[':id'=>$id, 'uri'=>$fileName]);
+      $uploadDirectory .= 'ad-photos/';
+    }else{
+      $uploadDirectory .= 'avatars/';
+    }
+
+    
     $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
     // $uploadPath = $uploadDirectory . basename($fileName); 
 
