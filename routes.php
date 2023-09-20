@@ -15,6 +15,9 @@ switch($uri){
 	case "/signup":
 		require_once "views/signup.php";
 		break;
+	case "/video":
+		require_once "views/video.php";
+		break;
 	default:
 		require_once "views/404.php";
 		break;
