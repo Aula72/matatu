@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<div class="centered">
 	
-		<form action="/upload.php?type=user_video" method="post" enctype="multipart/form-data">
+		<form action="/upload.php" method="post" enctype="multipart/form-data">
 <label for="file"><span>Filename:</span></label>
 <input type="file" name="the_file" id="the_file" /> 
 <br />
