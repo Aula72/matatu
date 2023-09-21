@@ -51,15 +51,22 @@
         $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
 
         if ($didUpload) {
-          echo "The file " . basename($fileName) . " has been uploaded";
+          $msg['status'] =1;
+          $msg['message'] ="The file " . basename($fileName) . " has been uploaded";
         } else {
-          echo "An error occurred. Please contact the administrator.";
+          $msg['message']= "An error occurred. Please contact the administrator.";
+          $msg['status'] =0;
         }
       } else {
         foreach ($errors as $error) {
-          echo $error . "These are the errors" . "\n";
+          $msg['message']= $error . "These are the errors" . "\n";
+          $msg['status'] =0;
         }
       }
 
+    }
+
+    if($msg['status']){
+      header("location: upload.php?type=$type");
     }
 ?>
