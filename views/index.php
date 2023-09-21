@@ -9,7 +9,7 @@
 //     videoPlayer.src = nextVideo;
 // }
 </script>
-<video id="videoPlayer" src="https://matatu.keberaorganics.com/uploads/avatars/a8b0fab10d5b220e3c7afb0236e926e6.mp4" autoplay autobuffer controls />
+<video id="videoPlayer" src="https://youtu.be/VETeteonCec" autoplay autobuffer controls />
         </div>
     </div>
 <div class="row" style="background-color:red; height: 25%;">
@@ -27,6 +27,10 @@
 
 <script> 
         var nextVideo = ["https://matatu.keberaorganics.com/uploads/user-videos/569e87cb50cb09d7d6ee4a1f46632f06.mp4","https://matatu.keberaorganics.com/uploads/user-videos/2d58a8efd15e9e70569c36a1d9b32cfb.mp4"]; 
+        nextVideo = [
+                "https://www.youtube.com/watch?v=VETeteonCec",
+                
+        ]
         var curVideo = 0; 
         var videoPlayer = document.getElementById('videoPlayer'); 
         videoPlayer.onended = function(){ 

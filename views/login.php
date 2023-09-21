@@ -160,7 +160,7 @@ body {
 
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <label for="floatingInput">Email address or Phone</label>
     </div>
     <div class="form-floating">
       <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
@@ -182,4 +182,5 @@ body {
 
     </body>
 </html>
+<script type="text/javascript"></script>
 <style type="text/css" ></style>

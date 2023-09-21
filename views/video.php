@@ -13,7 +13,7 @@
 </div>
 
 <style type="text/css">
-	.centered {
+.centered {
   position: absolute;
   left: 0;
   right: 0;
