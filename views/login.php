@@ -154,7 +154,7 @@ body {
     </div>
 
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form id="loginForm">
     <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -183,20 +183,24 @@ body {
     </body>
 </html>
 <script type="text/javascript">
-  $.ajax({
-    method:"POST",
-    url:`${base_url}/apis/user.php?login`,
-    headers:{
-      "content-type":"application/json"
-    },
-    data:JSON.stringify({
-      "username":$('#floatingInput').val(),
-      "pwd":$("#floatingPassword").val()
-    }),
-    success:(data,status)=>{
-      console.log(data)
-    }
-  })
-  document.cookie = "user_key=ieorieoiroeiroe; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/";
+  $("#loginForm").on("submit",(e)=>{
+    e.preventDefault();
+    $.ajax({
+      method:"POST",
+      url:`${base_url}/apis/user.php?login`,
+      headers:{
+        "content-type":"application/json"
+      },
+      data:JSON.stringify({
+        "username":$('#floatingInput').val(),
+        "pwd":$("#floatingPassword").val()
+      }),
+      success:(data,status)=>{
+        console.log(data)
+      }
+    })
+    document.cookie = "user_key=ieorieoiroeiroe; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/";
+  });
+  
 </script>
 <style type="text/css" ></style>
