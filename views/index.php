@@ -1,3 +1,4 @@
+<script type="text/javascript" src="/assets/js/jquery.multiple-upload.js"></script>
 <div id="drive">
    <div class="col-md-4">side adss</div>
 <div class="col-md-8" style="height: 75%;">
@@ -68,12 +69,12 @@
       </div>
       <div class="modal-body">
         <form action="/upload.php?type=user_video" method="post" enctype="multipart/form-data">
-                <div class="form-group">
+                <!-- <div class="form-group">
                        <input type="text" class="form-control" name="name" placeholder="Video Name..."> 
-                </div>
+                </div> -->
                 <div class="form-group">
                      <label for="file"><span>Filename:</span></label>
-                <input type="file" class="form-control" name="the_file" accept="video/mp4,video/mov,video/mpeg" id="the_file" multiple/> 
+                <input type="file" class="form-control" name="the_file" accept="video/mp4,video/mov,video/mpeg" id="the_file" multiple="multiple" class="multi"/> 
                 <br />   
                 </div>
                 
@@ -97,12 +98,12 @@
       </div>
       <div class="modal-body">
         <form action="/upload.php?type=user_audio" method="post" enctype="multipart/form-data">
-                <div class="form-group">
+                <!-- <div class="form-group">
                        <input type="text" class="form-control" name="name" placeholder="Video Name..."> 
-                </div>
+                </div> -->
                 <div class="form-group">
                      <label for="file"><span>Filename:</span></label>
-                <input type="file" class="form-control" name="the_file" accept="audio/m4a,audio/mp3"  id="the_file" multiple/> 
+                <input type="file" class="form-control" name="the_file" accept="audio/m4a,audio/mp3"  id="the_file" multiple="multiple" class="multi"e/> 
                 <br />   
                 </div>
                 
