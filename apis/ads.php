@@ -11,6 +11,7 @@ $user_id  = get_token_from_id()['user_id'];
 $p_id = $data['p_id'];
 $ad_status = $data['ad_status'];
 $ad_type = $data['ad_type'];
+$name = $data['name'];
 switch ($method) {
 	case 'GET':
 		if(isset($_GET['id'])){
@@ -27,8 +28,8 @@ switch ($method) {
 		break;
 	case "POST":
 		missing_fields([$user_id, $ad_status,$p_id]);
-		$q = "insert into ad set user_id=:user_id,ad_type=:ty, ad_status=:ad_status,p_id=:p_id";
-		if(make_query([":user_id"=>$user_id,':ty'=>$ad_type,":ad_status"=>$ad_status,":p_id"=>$p_id])){
+		$q = "insert into ad set user_id=:user_id,ad_type=:ty, ad_status=:ad_status,name=:n,p_id=:p_id";
+		if(make_query([":user_id"=>$user_id,':n'=>$name,':ty'=>$ad_type,":ad_status"=>$ad_status,":p_id"=>$p_id])){
 			$msg["status"] = 0;
 			$msg["message"] = "Ad added successfully...";
 		}else{
@@ -39,8 +40,8 @@ switch ($method) {
 	case "PUT":
 		if()
 		missing_fields([$user_id, $ad_status,$p_id]);
-		$q = "update ad set  ad_status=:ad_status,p_id=:p_id, ad_type=:ty where ad_id=:ad_id";
-		if(make_query($q,[":ad_id"=>$id,":ad_status"=>$ad_status,':ty'=>$ad_type,":p_id"=>$p_id])){
+		$q = "update ad set  ad_status=:ad_status,p_id=:p_id,name=:n, ad_type=:ty where ad_id=:ad_id";
+		if(make_query($q,[":ad_id"=>$id,':n'=>$name,":ad_status"=>$ad_status,':ty'=>$ad_type,":p_id"=>$p_id])){
 			$msg["status"] = 0;
 			$msg["message"] = "Ad ".SUCCESS;
 		}else{

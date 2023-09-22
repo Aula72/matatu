@@ -50,11 +50,11 @@
 <script> 
         logged_in();
         title('Home')
-        if(localStorage.getItem('type') == 2){
-                $('#admin').hide()
-        }else{
-                $('#drive').hide()
-        }
+        // if(localStorage.getItem('type') == 2){
+        //         $('#admin').hide()
+        // }else{
+        //         $('#drive').hide()
+        // }
         $.ajax({
                 url: `${base_url}/apis/videos.php`,
                 method:'get',
@@ -98,7 +98,7 @@
                 </div>
                 <div class="form-group">
                      <label for="file"><span>Filename:</span></label>
-                <input type="file" class="form-control" name="the_file" id="the_file" /> 
+                <input type="file" class="form-control" name="the_file" accept="video/mp4,video/mov,video/mpeg" id="the_file" /> 
                 <br />   
                 </div>
                 
@@ -127,7 +127,7 @@
                 </div>
                 <div class="form-group">
                      <label for="file"><span>Filename:</span></label>
-                <input type="file" class="form-control" name="the_file" id="the_file" /> 
+                <input type="file" class="form-control" name="the_file" accept="audio/m4a,audio/mp3"  id="the_file" /> 
                 <br />   
                 </div>
                 
@@ -153,12 +153,17 @@
       <div class="modal-body">
         <form action="/upload.php?type=user_audio" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                       <input type="text" class="form-control" name="name" placeholder="Video Name..."> 
+                        <input type="text" class="form-control" id='name' placeholder="Advert Name" name="">
                 </div>
                 <div class="form-group">
-                     <label for="file"><span>Filename:</span></label>
-                <input type="file" class="form-control" name="the_file" id="the_file" /> 
-                <br />   
+                        <select class="form-control" id="p_id">
+                        <?php 
+                                $g = make_query("select * from ad_packages");
+                                foreach($g->fetchAll() as $r){
+                                        echo "<option value='".$r['id']."'>".$r['name']."</option>";
+                                }
+                        ?>
+                        </select>
                 </div>
                 
                 <input type="submit" name="submit" class="btn btn-sm btn-secondary"value="Submit" />
