@@ -206,10 +206,10 @@ body {
           // localStorage.setItem('nwp',data.token)
           localStorage.setItem('type',data.user_type)
           localStorage.setItem('auth', data.token)
-          setTimeout(toast(data.message),5000)
+          setTimeout(()=>{toast(data.message)},5000)
           window.location = '/'
         }else{
-          setTimeout(toast(data.message),5000)
+          setTimeout(()=>{toast(data.message)},5000)
           $("#floatingPassword").val('')
         }
       }
