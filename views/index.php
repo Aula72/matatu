@@ -206,6 +206,7 @@
                         url:`${base_url}/apis/ads.php`,
                         method: 'POST',
                         headers,
+                        data:JSON.stringify(data),
                         success:(data, status)=>{
                                 console.log(data)
                         }
