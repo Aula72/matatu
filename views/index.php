@@ -1,4 +1,5 @@
-<div class="col-md-4">side adss</div>
+<div id="drive">
+   <div class="col-md-4">side adss</div>
 <div class="col-md-8" style="height: 75%;">
         <div class="row mt-2 mb-2" >
                 <div class="col-md-6"></div>
@@ -10,21 +11,32 @@
                                 Upload Audio
                         </button>
                 </div>
-        </div>
-            <script type="text/javascript">
+        </div> 
 
-// var nextVideo = "https://matatu.keberaorganics.com/uploads/user-videos/569e87cb50cb09d7d6ee4a1f46632f06.mp4";
-// var videoPlayer = document.getElementById('videoPlayer');
-// videoPlayer.onended = function(){
-//     videoPlayer.src = nextVideo;
-// }
-</script>
-<video id="videoPlayer" src="https://youtu.be/VETeteonCec" autoplay autobuffer controls />
+        <video id="videoPlayer" src="https://youtu.be/VETeteonCec" autoplay autobuffer controls />
         </div>
     </div>
-<div class="row" style="background-color:red; height: 25%;">
+        <div class="row" style="background-color:red; height: 25%;">
         bottom adds
-    </div>
+    </div>    
+</div>
+
+
+<div id="admin">
+       <div class="row mt-2 mb-2" >
+                <div class="col-md-8"></div>
+                <div class="col-md-4">
+                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticAd">
+                                Add New Ad
+                        </button>
+                        
+                </div>
+        </div>  
+</div>
+
+           
+
+
 
 
 <style type="text/css">
@@ -36,7 +48,8 @@
 </style>
 
 <script> 
-
+        logged_in();
+        title('Home')
         $.ajax({
                 url: `${base_url}/apis/videos.php`,
                 method:'get',
@@ -100,6 +113,36 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Upload New Audio</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/upload.php?type=user_audio" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                       <input type="text" class="form-control" name="name" placeholder="Video Name..."> 
+                </div>
+                <div class="form-group">
+                     <label for="file"><span>Filename:</span></label>
+                <input type="file" class="form-control" name="the_file" id="the_file" /> 
+                <br />   
+                </div>
+                
+                <input type="submit" name="submit" class="btn btn-sm btn-secondary"value="Submit" />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="staticAd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Create New Ad</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

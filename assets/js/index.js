@@ -15,3 +15,14 @@ const toast = (message) =>{
   </div>
 </div>`
 }
+
+
+const logged_in =() =>{
+	if(localStorage.getItem('auth')==='' || localStorage.getItem('auth')===null){
+		window.location = '/logout'
+	}
+}
+
+const title = (t) =>{
+	document.title = `${t} - Matatu`;
+}
