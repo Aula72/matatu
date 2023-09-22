@@ -98,7 +98,7 @@ function get_token_from_id(){
 }
 
 function get_id_from_token($token){
-    $f = make_query("select * from user_token where token=:t", [':t'=>$t]);
+    $f = make_query("select * from user_token where token=:t", [':t'=>$token]);
     if($f->rowCount()>0){
         $user_id = $f->fetch(PDO::FETCH_ASSOC);
         return $user_id['user_id'];
