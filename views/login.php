@@ -182,5 +182,21 @@ body {
 
     </body>
 </html>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+  $.ajax({
+    method:"POST",
+    url:`${base_url}/apis/user.php?login`,
+    headers:{
+      "content-type":"application/json"
+    },
+    data:JSON.stringify({
+      "username":$('#floatingInput').val(),
+      "pwd":$("#floatingPassword").val()
+    }),
+    success:(data,status)=>{
+      console.log(data)
+    }
+  })
+  document.cookie = "user_key=ieorieoiroeiroe; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/";
+</script>
 <style type="text/css" ></style>

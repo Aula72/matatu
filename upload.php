@@ -1,6 +1,6 @@
 <?php
     include_once "apis/helper.php";
-    $user_id = "<script>localStorage.getItem('auth')</script>";
+    $user_id = $_COOKIE['user_key'];
     $type = isset($_GET['type'])?$_GET['type']:'';
     $currentDirectory = getcwd();
     $uploadDirectory = "/uploads/";
