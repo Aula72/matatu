@@ -206,6 +206,7 @@ body {
           setTimeout(toast(data.message),5000)
           window.location = '/'
         }else{
+          setTimeout(toast(data.message),5000)
           $("#floatingPassword").val('')
         }
       }
