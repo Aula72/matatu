@@ -197,9 +197,20 @@ body {
       }),
       success:(data,status)=>{
         console.log(data)
+        if(data.status==1){
+          var ms = new Date().getTime() + 86400000;
+          var tomorrow = new Date(ms);
+          document.cookie = `user_key=${data.token}; expires=${tomorrow}; path=/`;
+          localStorage.setItem('nwp',data.token)
+          localStorage.setItem('type',data.user_type)
+          setTimeout(toast(data.message),5000)
+          window.location = '/'
+        }else{
+          $("#floatingPassword").val('')
+        }
       }
     })
-    document.cookie = "user_key=ieorieoiroeiroe; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/";
+    
   });
   
 </script>
