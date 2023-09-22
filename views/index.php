@@ -103,7 +103,7 @@
                 </div> -->
                 <div class="form-group">
                      <label for="file"><span>Filename:</span></label>
-                <input type="file" class="form-control" name="the_file" accept="audio/m4a,audio/mp3"  id="the_file" multiple="multiple" class="multi"e/> 
+                <input type="file" class="form-control" name="the_file" accept="audio/m4a,audio/mp3"  id="the_file" multiple="multiple" class="multi"/> 
                 <br />   
                 </div>
                 

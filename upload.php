@@ -23,6 +23,7 @@
       $user_id = 1;
       $video_name = $normalText;
       $video_url = $fileName;
+      die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension, "user_id"=>$user_id,"name"=>$video_name, "url"=>$video_url]));
       make_query("insert into videos set user_id=:user_id, video_name=:v, video_url=:url",[':user_id'=>$user_id, ':v'=>$video_name, ":url"=>$video_url]);
       $uploadDirectory .= 'user-videos/';
     }else if($type=='user_audio'){
