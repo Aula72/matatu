@@ -4,3 +4,5 @@
 <?php
 
 $_COOKIE = null;
+
+header('location: /login');
