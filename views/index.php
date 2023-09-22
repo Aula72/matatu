@@ -22,7 +22,7 @@
 </div>
 </div>
 
-<div id="admin">
+<div id="admin" class="m-2">
        <div class="row mt-2 mb-2" >
                 <div class="col-md-8">Available Ads</div>
                 <div class="col-md-4">
