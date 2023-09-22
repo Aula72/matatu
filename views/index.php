@@ -91,7 +91,7 @@
                                 console.log(data)
                                 let g = ''
                                 for(var k of data.ads){
-                                        g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' style='float:right;'>Add Image(s)</button></li>`
+                                        g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' style='float:right;' onclick='add_image(${k.id})'>Add Image(s)</button></li>`
                                 }
                                 $('#ads').html(g)
                         }
@@ -100,7 +100,9 @@
         
         
 
-        
+        const add_image =(i)=>{
+                console.log(i)
+        }
 </script>
 
 
