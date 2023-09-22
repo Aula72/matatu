@@ -151,18 +151,28 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="/upload.php?type=user_audio" method="post" enctype="multipart/form-data">
-                <div class="form-group">
+        <form id='createAdd'>
+                <div class="form-group mb-2">
                         <input type="text" class="form-control" id='name' placeholder="Advert Name" name="">
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                         <select class="form-control" id="p_id">
+
                         <?php 
                                 $g = make_query("select * from ad_packages");
                                 foreach($g->fetchAll() as $r){
                                         echo "<option value='".$r['id']."'>".$r['name']."</option>";
                                 }
                         ?>
+                        </select>
+                </div>
+
+                <input type="hidden" id='ad_status' value='1' name="">
+
+                <div class="form-group">
+                        <select id='ad_type'>
+                                <option value="1">Bottom Ad</option>
+                                <option value="0">Left Side Ad</option>
                         </select>
                 </div>
                 
