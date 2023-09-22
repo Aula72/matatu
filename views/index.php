@@ -53,60 +53,7 @@
 </style>
 
 <script> 
-        logged_in();
-        title('Home')
-        if(localStorage.getItem('type') == 2){
-                $('#admin').hide()
-
-                $.ajax({
-                url: `${base_url}/apis/videos.php`,
-                method:'get',
-                headers,
-                success:(data, status)=>{
-                        console.log(data)
-                        var nextVideo = data.videos; 
-                        
         
-                        var curVideo = 0; 
-
-                        var videoPlayer = document.getElementById('videoPlayer'); 
-                        videoPlayer.src = `/uploads/user-videos/${nextVideo[0]['video_url']}`;
-                        videoPlayer.onended = function(){ 
-                        if(curVideo == 0){ 
-                                videoPlayer.src = `/uploads/user-videos/${nextVideo[1]}`; 
-                                curVideo = 1; 
-                        } else if(curVideo == 1){ 
-                                videoPlayer.src = nextVideo[0]; curVideo = 0; 
-                        } 
-                        } 
-                }
-                })
-        }else{
-                $('#drive').hide()
-                list_ads()
-                
-        }
-        
-        
-
-        const add_image =(i)=>{
-                console.log(i)
-        }
-        const list_ads = () =>{
-                        $.ajax({
-                        url:`${base_url}/apis/ads.php`,
-                        method:'get',
-                        headers,
-                        success:(data, status)=>{
-                                console.log(data)
-                                let g = ''
-                                for(var k of data.ads){
-                                        g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' style='float:right;' onclick='add_image(${k.id})'>Add Image(s)</button></li>`
-                                }
-                                $('#ads').html(g)
-                        }
-                        })
-                }
 </script>
 
 
@@ -238,4 +185,61 @@
                         }
                 })
         })
+
+        logged_in();
+        title('Home')
+        const list_ads = () =>{
+                        $.ajax({
+                        url:`${base_url}/apis/ads.php`,
+                        method:'get',
+                        headers,
+                        success:(data, status)=>{
+                                console.log(data)
+                                let g = ''
+                                for(var k of data.ads){
+                                        g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' style='float:right;' onclick='add_image(${k.id})'>Add Image(s)</button></li>`
+                                }
+                                $('#ads').html(g)
+                        }
+                        })
+                }
+        
+        if(localStorage.getItem('type') == 2){
+                $('#admin').hide()
+
+                $.ajax({
+                url: `${base_url}/apis/videos.php`,
+                method:'get',
+                headers,
+                success:(data, status)=>{
+                        console.log(data)
+                        var nextVideo = data.videos; 
+                        
+        
+                        var curVideo = 0; 
+
+                        var videoPlayer = document.getElementById('videoPlayer'); 
+                        videoPlayer.src = `/uploads/user-videos/${nextVideo[0]['video_url']}`;
+                        videoPlayer.onended = function(){ 
+                        if(curVideo == 0){ 
+                                videoPlayer.src = `/uploads/user-videos/${nextVideo[1]}`; 
+                                curVideo = 1; 
+                        } else if(curVideo == 1){ 
+                                videoPlayer.src = nextVideo[0]; curVideo = 0; 
+                        } 
+                        } 
+                }
+                })
+        }else{
+                $('#drive').hide()
+                list_ads()
+                
+        }
+        
+        
+
+        const add_image =(i)=>{
+                console.log(i)
+        }
+        
 </script>
