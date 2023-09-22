@@ -83,7 +83,17 @@
                 })
         }else{
                 $('#drive').hide()
-                $.ajax({
+                list_ads()
+                
+        }
+        
+        
+
+        const add_image =(i)=>{
+                console.log(i)
+        }
+        const list_ads = () =>{
+                        $.ajax({
                         url:`${base_url}/apis/ads.php`,
                         method:'get',
                         headers,
@@ -95,14 +105,8 @@
                                 }
                                 $('#ads').html(g)
                         }
-                })
-        }
-        
-        
-
-        const add_image =(i)=>{
-                console.log(i)
-        }
+                        })
+                }
 </script>
 
 
@@ -230,7 +234,7 @@
                         headers,
                         data:JSON.stringify(data),
                         success:(data, status)=>{
-                                console.log(data)
+                                list_ads();
                         }
                 })
         })
