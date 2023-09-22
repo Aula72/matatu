@@ -43,16 +43,13 @@
                 headers,
                 success:(data, status)=>{
                         console.log(data)
-                        var nextVideo = []; 
-                        for(let k in data.videos){
-                                nextVideo.push(`${base_url}/${k}`)
-                        }
+                        var nextVideo = data.videos; 
                         
         
                         var curVideo = 0; 
 
                         var videoPlayer = document.getElementById('videoPlayer'); 
-                        videoPlayer.src = nextVideo[0];
+                        videoPlayer.src = nextVideo[0]['video_url'];
                         videoPlayer.onended = function(){ 
                         if(curVideo == 0){ 
                                 videoPlayer.src = nextVideo[1]; 
