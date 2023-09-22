@@ -52,7 +52,7 @@
                         videoPlayer.src = `/uploads/user-videos/${nextVideo[0]['video_url']}`;
                         videoPlayer.onended = function(){ 
                         if(curVideo == 0){ 
-                                videoPlayer.src = nextVideo[1]; 
+                                videoPlayer.src = `/uploads/user-videos/${nextVideo[1]}`; 
                                 curVideo = 1; 
                         } else if(curVideo == 1){ 
                                 videoPlayer.src = nextVideo[0]; curVideo = 0; 
