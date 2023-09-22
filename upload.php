@@ -15,7 +15,7 @@
     $fileType = $_FILES['the_file']['type'];
     $fileExtension = strtolower(end(explode('.',$fileName)));
 
-    die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension, "user_id"=>$user_id]));
+    // die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension, "user_id"=>$user_id]));
     $normalText = $fileName;
     $fileName = md5($fileName.rand(1000,9999)).'.'.$fileExtension;
 
