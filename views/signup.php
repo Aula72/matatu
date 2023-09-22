@@ -221,6 +221,7 @@ body {
         "fname":$("#fname").val(),
         "user_type":$("#user_type").val(),
         "user_code":$("#user_code").val(),
+        "email":$("#email").val(),
       }),
       success:(data,status)=>{
         console.log(data)
