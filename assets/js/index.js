@@ -2,7 +2,7 @@ const base_url = window.origin;
 
 
 var headers  = {
-	"auth":localStorage.getItem('auth_'),
+	"auth":localStorage.getItem('auth'),
 }
 
 const toast = (message) =>{
