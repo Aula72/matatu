@@ -1,4 +1,4 @@
-const base_url = `https://matatu.keberaorganics.com`;
+const base_url = window.origin;
 
 
 var headers  = {
