@@ -8,7 +8,7 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 $id = $_GET['id'];	
 $user_id = get_token_from_id()['user_id']?get_token_from_id()['user_id']:'';	
-die(json_encode($data));
+// die(json_encode($data));
 $p_id = $data['p_id'];
 $ad_status = $data['ad_status'];
 $ad_type = $data['ad_type'];
