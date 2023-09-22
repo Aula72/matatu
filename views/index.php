@@ -79,6 +79,23 @@
                 }
         })
         
+
+        $('#createAdd').on('submit', (e)=>{
+                e.preventDefault()
+
+                let data = {
+
+                }
+
+                $.ajax({
+                        url:`${base_url}/apis/ads.php`,
+                        method: 'POST',
+                        headers,
+                        success:(data, status)=>{
+                                console.log(data)
+                        }
+                })
+        })
 </script>
 
 
@@ -170,7 +187,7 @@
                 <input type="hidden" id='ad_status' value='1' name="">
 
                 <div class="form-group">
-                        <select id='ad_type'>
+                        <select id='ad_type' class="form-control">
                                 <option value="1">Bottom Ad</option>
                                 <option value="0">Left Side Ad</option>
                         </select>
