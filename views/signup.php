@@ -168,7 +168,11 @@ body {
       <label for="floatingInput">Last Name</label>
     </div>
     <div class="form-floating">
-      <input type="email" class="form-control" id="username" placeholder="name@example.com">
+      <input type="text" class="form-control" id="username" placeholder="">
+      <label for="floatingInput">Username</label>
+    </div>
+    <div class="form-floating">
+      <input type="email" class="form-control" id="email" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
@@ -201,15 +205,22 @@ body {
 <script type="text/javascript">
   $("#loginForm").on("submit",(e)=>{
     e.preventDefault();
-    $.ajax({
+    if($("#pwd").val()==$("#cpwd").val()){
+      $.ajax({
       method:"POST",
       url:`${base_url}/apis/user.php?register`,
       headers:{
         "content-type":"application/json"
       },
       data:JSON.stringify({
-        "username":$('#floatingInput').val(),
-        "pwd":$("#floatingPassword").val()
+        "username":$('#username').val(),
+        "pwd":$("#pwd").val(),
+        "phone":$("#phone").val(),
+        "username":$("#username").val(),
+        "lname":$("#lname").val(),
+        "fname":$("#fname").val(),
+        "user_type":$("#user_type").val(),
+        "user_code":$("#user_code").val(),
       }),
       success:(data,status)=>{
         console.log(data)
@@ -228,6 +239,10 @@ body {
         }
       }
     })
+    }else{
+      alert(`Passwords didn't match try again`);
+    }
+    
     
   });
   document.title = 'Sign Up to Matatu'
