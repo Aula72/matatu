@@ -1,4 +1,4 @@
-
+<h3 class="text-center">My Videos</h3>
 <ul class="list-group" id="videos"></ul>
 
 
