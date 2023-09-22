@@ -84,7 +84,10 @@
                 e.preventDefault()
 
                 let data = {
-
+                        "ad_status":$('#ad_status').val(),
+                        "p_id":$('#p_id').val(),
+                        "name":$('#name').val(),
+                        "ad_type":$('#ad_type').val(),
                 }
 
                 $.ajax({
@@ -186,7 +189,7 @@
 
                 <input type="hidden" id='ad_status' value='1' name="">
 
-                <div class="form-group">
+                <div class="form-group mb-2">
                         <select id='ad_type' class="form-control">
                                 <option value="1">Bottom Ad</option>
                                 <option value="0">Left Side Ad</option>
