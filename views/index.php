@@ -24,14 +24,19 @@
 
 <div id="admin">
        <div class="row mt-2 mb-2" >
-                <div class="col-md-8"></div>
+                <div class="col-md-8">Available Ads</div>
                 <div class="col-md-4">
                         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticAd">
                                 Add New Ad
                         </button>
                         
                 </div>
-        </div>  
+        </div> 
+
+        <div class="row">
+                <ul class="list-group" id='ads'></ul>
+        </div>
+
 </div>
 
            
@@ -84,6 +89,11 @@
                         headers,
                         success:(data, status)=>{
                                 console.log(data)
+                                let g = ''
+                                for(var k of data.ads){
+                                        g += `<li class='list-group-item'>${k.name}</li>`
+                                }
+                                $('#ads').html(g)
                         }
                 })
         }
