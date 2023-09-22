@@ -5,7 +5,7 @@ error_reporting(~E_NOTICE);
 include_once "helper.php";
 $method = $_SERVER['REQUEST_METHOD'];
 
-$user_id = get_token_from_id()?get_token_from_id()['user_id']:'';
+$user_id = get_token_from_id()['user_id']?get_token_from_id()['user_id']:'';
 switch ($method) {
 	case 'GET':
 		if(isset($_GET['id'])){
