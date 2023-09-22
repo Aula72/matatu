@@ -30,7 +30,7 @@ switch ($method) {
 	case "POST":
 		missing_fields([$user_id, $ad_status,$p_id]);
 		$q = "insert into ad set user_id=:user_id,ad_type=:ty, ad_status=:ad_status,name=:n,p_id=:p_id";
-		if(make_query([":user_id"=>$user_id,':n'=>$name,':ty'=>$ad_type,":ad_status"=>$ad_status,":p_id"=>$p_id])){
+		if(make_query($q,[":user_id"=>$user_id,':n'=>$name,':ty'=>$ad_type,":ad_status"=>$ad_status,":p_id"=>$p_id])){
 			$msg["status"] = 0;
 			$msg["message"] = "Ad added successfully...";
 		}else{
