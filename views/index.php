@@ -196,7 +196,7 @@
                         </select>
                 </div>
                 
-                <input type="submit" name="submit" class="btn btn-sm btn-secondary"value="Submit" />
+                <button type="submit"  class="btn btn-sm btn-secondary">Submit</button>
         </form>
       </div>
       <div class="modal-footer">
