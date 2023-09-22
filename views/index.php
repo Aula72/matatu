@@ -49,7 +49,7 @@
                         var curVideo = 0; 
 
                         var videoPlayer = document.getElementById('videoPlayer'); 
-                        videoPlayer.src = nextVideo[0]['video_url'];
+                        videoPlayer.src = `/uploads/user-videos/${nextVideo[0]['video_url']}`;
                         videoPlayer.onended = function(){ 
                         if(curVideo == 0){ 
                                 videoPlayer.src = nextVideo[1]; 
