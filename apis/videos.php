@@ -10,7 +10,14 @@ switch ($method) {
 		if(isset($_GET['id'])){
 
 		}else{
-
+			
+			$vid = [];
+			$user_id = get_token_from_id()['user_id'];
+			$v = make_query("select * from videos where user_id=:id",[':id'=>$user_id]);
+			foreach($v->fetchAll() as $video){
+				array_push($vid, $video);
+			}
+			$msg['videos'] = $vid;
 		}
 		break;
 	case "POST":
