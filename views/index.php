@@ -80,25 +80,7 @@
         })
         
 
-        $('#createAdd').on('submit', (e)=>{
-                e.preventDefault()
-
-                let data = {
-                        "ad_status":$('#ad_status').val(),
-                        "p_id":$('#p_id').val(),
-                        "name":$('#name').val(),
-                        "ad_type":$('#ad_type').val(),
-                }
-
-                $.ajax({
-                        url:`${base_url}/apis/ads.php`,
-                        method: 'POST',
-                        headers,
-                        success:(data, status)=>{
-                                console.log(data)
-                        }
-                })
-        })
+        
 </script>
 
 
@@ -206,3 +188,27 @@
     </div>
   </div>
 </div>
+
+
+
+<script type="text/javascript">
+        $('#createAdd').on('submit', (e)=>{
+                e.preventDefault()
+
+                let data = {
+                        "ad_status":$('#ad_status').val(),
+                        "p_id":$('#p_id').val(),
+                        "name":$('#name').val(),
+                        "ad_type":$('#ad_type').val(),
+                }
+
+                $.ajax({
+                        url:`${base_url}/apis/ads.php`,
+                        method: 'POST',
+                        headers,
+                        success:(data, status)=>{
+                                console.log(data)
+                        }
+                })
+        })
+</script>
