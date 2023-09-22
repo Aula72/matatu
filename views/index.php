@@ -39,6 +39,7 @@
 
         $.ajax({
                 url: `${base_url}/apis/videos.php`,
+                method:'get',
                 headers,
                 success:(data, status)=>{
                         console.log(data)
