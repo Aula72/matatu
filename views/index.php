@@ -20,7 +20,7 @@
         bottom adds
     </div>    
 </div>
-
+</div>
 
 <div id="admin">
        <div class="row mt-2 mb-2" >
