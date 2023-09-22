@@ -32,10 +32,10 @@ switch ($method) {
 		$q = "insert into ad set user_id=:user_id,ad_type=:ty, ad_status=:ad_status,name=:n,p_id=:p_id";
 		if(make_query($q,[":user_id"=>$user_id,':n'=>$name,':ty'=>$ad_type,":ad_status"=>$ad_status,":p_id"=>$p_id])){
 			$msg["status"] = 0;
-			$msg["message"] = "Ad added successfully...";
+			$msg["message"] = "Ad ".SUCCESS;
 		}else{
 			$msg["status"] = 0;
-			$msg["message"] = "Ad was not created...";
+			$msg["message"] = FAIL;
 		}
 		break;
 	case "PUT":
@@ -43,8 +43,8 @@ switch ($method) {
 		missing_fields([$user_id, $ad_status,$p_id]);
 		$q = "update ad set  ad_status=:ad_status,p_id=:p_id,name=:n, ad_type=:ty where ad_id=:ad_id";
 		if(make_query($q,[":ad_id"=>$id,':n'=>$name,":ad_status"=>$ad_status,':ty'=>$ad_type,":p_id"=>$p_id])){
-			$msg["status"] = 0;
-			$msg["message"] = "Ad ".SUCCESS;
+			$msg["status"] = 1;
+			$msg["message"] = "Ad ".UPDATE;
 		}else{
 			$msg["status"] = 0;
 			$msg["message"] = FAIL;

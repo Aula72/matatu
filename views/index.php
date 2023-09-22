@@ -50,12 +50,10 @@
 <script> 
         logged_in();
         title('Home')
-        // if(localStorage.getItem('type') == 2){
-        //         $('#admin').hide()
-        // }else{
-        //         $('#drive').hide()
-        // }
-        $.ajax({
+        if(localStorage.getItem('type') == 2){
+                $('#admin').hide()
+
+                $.ajax({
                 url: `${base_url}/apis/videos.php`,
                 method:'get',
                 headers,
@@ -77,7 +75,19 @@
                         } 
                         } 
                 }
-        })
+                })
+        }else{
+                $('#drive').hide()
+                $.ajax({
+                        url:`${base_url}/apis/ads.php`,
+                        method:'get',
+                        headers,
+                        success:(data, status)=>{
+                                console.log(data)
+                        }
+                })
+        }
+        
         
 
         
