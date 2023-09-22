@@ -26,6 +26,14 @@
 </style>
 
 <script> 
+
+        $.ajax({
+                url: `${base_url}/apis/videos.php`,
+                headers,
+                success:(data, status)=>{
+                        console.log(data)
+                }
+        })
         var nextVideo = ["https://matatu.keberaorganics.com/uploads/user-videos/569e87cb50cb09d7d6ee4a1f46632f06.mp4","https://matatu.keberaorganics.com/uploads/user-videos/2d58a8efd15e9e70569c36a1d9b32cfb.mp4"]; 
         nextVideo = [
                 "https://www.youtube.com/watch?v=VETeteonCec",
