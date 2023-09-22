@@ -203,6 +203,7 @@ body {
           document.cookie = `user_key=${data.token}; expires=${tomorrow}; path=/`;
           localStorage.setItem('nwp',data.token)
           localStorage.setItem('type',data.user_type)
+          localStorage.setItem('auth', data.token)
           setTimeout(toast(data.message),5000)
           window.location = '/'
         }else{
