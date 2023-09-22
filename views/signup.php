@@ -230,10 +230,10 @@ body {
           var tomorrow = new Date(ms);
           document.cookie = `user_key=${data.token}; expires=${tomorrow}; path=/`;
           
-          localStorage.setItem('type',data.user_type)
-          localStorage.setItem('auth', data.token)
-          setTimeout(toast(data.message),5000)
-          window.location = '/'
+          // localStorage.setItem('type',data.user_type)
+          // localStorage.setItem('auth', data.token)
+          // setTimeout(toast(data.message),5000)
+          window.location = '/login'
         }else{
           setTimeout(toast(data.message),5000)
           $("#floatingPassword").val('')
