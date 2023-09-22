@@ -73,7 +73,7 @@
                 </div>
                 <div class="form-group">
                      <label for="file"><span>Filename:</span></label>
-                <input type="file" class="form-control" name="the_file" accept="video/mp4,video/mov,video/mpeg" id="the_file" multiple='multiple' /> 
+                <input type="file" class="form-control" name="the_file" accept="video/mp4,video/mov,video/mpeg" id="the_file" multiple/> 
                 <br />   
                 </div>
                 
@@ -102,7 +102,7 @@
                 </div>
                 <div class="form-group">
                      <label for="file"><span>Filename:</span></label>
-                <input type="file" class="form-control" name="the_file" accept="audio/m4a,audio/mp3"  id="the_file" multiple='multiple'/> 
+                <input type="file" class="form-control" name="the_file" accept="audio/m4a,audio/mp3"  id="the_file" multiple/> 
                 <br />   
                 </div>
                 
@@ -203,7 +203,7 @@
                         }
                         })
                 }
-        
+
         if(localStorage.getItem('type') == 2){
                 $('#admin').hide()
 
