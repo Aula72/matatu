@@ -16,8 +16,9 @@ switch ($method) {
 		$user_code = $data['user_code'];
 		$phone = $data['phone'];
 		$pwd = password_hash($data['pwd'],PASSWORD_DEFAULT);
-		missing_fields([$pwd, $phone, $username, $fname, $lname, $user_type, $user_code]);
+		
 		if(isset($_GET['register'])){
+			missing_fields([$pwd, $phone, $username, $fname, $lname, $user_type, $user_code]);
 			if(!user_exists($username)){
 				missing_fields([$pwd, $phone, $username, $fname, $lname, $user_type, $user_code]);
 				 $q = "insert into user set username=:username, user_type=:user_type, email=:email,fname=:fname, lname=:lname, user_code=:user_code,phone=:phone, pwd=:pwd";
@@ -42,6 +43,7 @@ switch ($method) {
 			}
 			
 		}else if(isset($_GET['login'])){
+			missing_fields([$username,$data['pwd']]);
 			if(user_exists($username)){
 				$user = make_query("select * from user where username=:usr or phone=:usr or email=:usr",[':usr'=>$username]);
 				$user = $user->fetch(PDO::FETCH_ASSOC);
