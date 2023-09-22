@@ -1,5 +1,6 @@
 <?php
     include_once "apis/helper.php";
+    $user_id = "<script>localStorage.getItem('auth')</script>";
     $type = isset($_GET['type'])?$_GET['type']:'';
     $currentDirectory = getcwd();
     $uploadDirectory = "/uploads/";
@@ -14,7 +15,7 @@
     $fileType = $_FILES['the_file']['type'];
     $fileExtension = strtolower(end(explode('.',$fileName)));
 
-    // die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension]));
+    die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension, "user_id"=>$user_id]));
     $normalText = $fileName;
     $fileName = md5($fileName.rand(1000,9999)).'.'.$fileExtension;
 

@@ -96,3 +96,13 @@ function get_token_from_id(){
         die(json_encode(["status"=>0,"message"=>"Authorization error!"]));
     }
 }
+
+function get_id_from_token($token){
+    $f = make_query("select * from user_token where token=:t", [':t'=>$t]);
+    if($f->rowCount()>0){
+        $user_id = $f->fetch(PDO::FETCH_ASSOC);
+        return $user_id['user_id'];
+    }else{
+        die(json_encode(["status"=>0,"message"=>"Authorization token is expired!"]));
+    }
+}
