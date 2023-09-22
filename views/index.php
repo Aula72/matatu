@@ -91,7 +91,7 @@
                                 console.log(data)
                                 let g = ''
                                 for(var k of data.ads){
-                                        g += `<li class='list-group-item'>${k.name}</li>`
+                                        g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning'>Add Image</button></li>`
                                 }
                                 $('#ads').html(g)
                         }
