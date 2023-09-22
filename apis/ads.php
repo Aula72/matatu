@@ -38,7 +38,7 @@ switch ($method) {
 		}
 		break;
 	case "PUT":
-		if()
+		// if()
 		missing_fields([$user_id, $ad_status,$p_id]);
 		$q = "update ad set  ad_status=:ad_status,p_id=:p_id,name=:n, ad_type=:ty where ad_id=:ad_id";
 		if(make_query($q,[":ad_id"=>$id,':n'=>$name,":ad_status"=>$ad_status,':ty'=>$ad_type,":p_id"=>$p_id])){
