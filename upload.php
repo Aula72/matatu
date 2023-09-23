@@ -34,6 +34,7 @@
       $ur = "/uploads/ad-photos/$fileName";
       make_query("insert into ad_img set ad_id=:id, uri=:uri",[':id'=>$id, 'uri'=>$ur]);
       $uploadDirectory .= 'ad-photos/';
+      header('location: /');
     }else{
       $uploadDirectory .= 'avatars/';
     }
