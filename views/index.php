@@ -144,13 +144,13 @@ float: right;
                         headers,
                         success:(data, status)=>{
                                 console.log(data)
-                                let g =ol = ''
+                                let g  = ''
                                 for(var k of data.ads){
                                         g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' type='button' style='float:right;' data-toggle="modal" data-target="#exampleModal${k.id}">Add Image(s)</button></li>`
-                                        ol += ``
+                                       
                                 }
                                 $('#ads').html(g)
-                                $("#modal_region").html(ol)
+                                
                         }
                         })
                 }
