@@ -14,7 +14,7 @@
    
 
     <div class="row">
-        <div class="col-12" style="background-color:red; height: 25%;">
+        <div class="col-12" style="background-color:red; height: 20%;">
         bottom adds
     </div>    
 </div>
