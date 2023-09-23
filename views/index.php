@@ -206,7 +206,7 @@ float: right;
 $cv = make_query("select * from ad");
 foreach($cv->fetchAll() as $c){
 ?>
-<div class="modal fade" id="exampleModal<?php echo $c['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel${k.id}" aria-hidden="true">
+<div class="modal fade" id="exampleModal<?php echo $c['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel<?php echo $c['id'];?>" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
