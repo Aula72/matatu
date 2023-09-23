@@ -14,8 +14,8 @@
                 </div>
         </div> 
 
-        <video id="" autoplay autobuffer controls>
-                <source  type="video/mp4" id="videoPlayer">
+        <video id="videoPlayer" autoplay autobuffer controls>
+                <!-- <source  type="video/mp4" id=""> -->
         </video>
         </div>
     </div>
