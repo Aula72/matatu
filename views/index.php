@@ -147,31 +147,7 @@ float: right;
                                 let g =ol = ''
                                 for(var k of data.ads){
                                         g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' type='button' style='float:right;' data-toggle="modal" data-target="#exampleModal${k.id}">Add Image(s)</button></li>`
-                                        ol += `<div class="modal fade" id="exampleModal${k.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel${k.id}" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel${k.id}">${k.name}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="uploads.php?ad_photo">
-                <input type='hidden' name='ad_id' value='${k.id}'>
-                <div class='form-group mb-2'>
-                <input type='file' name='the_file' class='form-control'>
-                </div>
-                <input type='submit' value='Submit' name='submit'/>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-       
-      </div>
-    </div>
-  </div>
-</div>`
+                                        ol += ``
                                 }
                                 $('#ads').html(g)
                                 $("#modal_region").html(ol)
@@ -222,3 +198,39 @@ float: right;
 
 
 </script>
+
+
+
+
+<?php 
+$cv = make_query("select * from ads");
+foreach($cv->fetchAll() as $c){
+?>
+<div class="modal fade" id="exampleModal<?php echo $c['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel${k.id}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel<?php echo $c['id'];?>"><?php echo $c['name']; ?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="uploads.php?ad_photo">
+                <input type='hidden' name='ad_id' value='<?php echo $c['id'];?>'>
+                <div class='form-group mb-2'>
+                <input type='file' name='the_file' class='form-control'>
+                </div>
+                <input type='submit' value='Submit' name='submit'/>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<?php 
+}
+?>
