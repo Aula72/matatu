@@ -2,7 +2,7 @@
 <div id="drive">
         <div class="row">
               <div class="col-md-4" style="background-color:green; height:75%">
-                      <?php include_one "incs/side-ad.php";?>
+                      <?php include_once "incs/side-ad.php";?>
               </div>
                 <div class="col-md-8" style="height: 75%;">
          
@@ -17,7 +17,7 @@
 
     <div class="row">
         <div class="col-12" style="background-color:red; height: 20%;">
-        <?php include_one "incs/botton-ad.php";?>
+        <?php include_once "incs/botton-ad.php";?>
     </div>    
 </div>
 
