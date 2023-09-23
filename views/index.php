@@ -163,7 +163,13 @@
   </div>
 </div>
 
-
+<style>
+      video{
+        width: 300px; 
+        height: 200px;
+        border: 1px solid #666;
+      }
+    </style>
 
 <script type="text/javascript">
         $('#createAdd').on('submit', (e)=>{
