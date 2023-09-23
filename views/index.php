@@ -178,6 +178,7 @@ float: right;
                         } 
                 }
                 })
+                list_ads()
         }else{
                 $('#drive').hide()
                 list_ads()
