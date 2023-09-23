@@ -52,9 +52,6 @@
         }
 </style>
 
-<script> 
-        
-</script>
 
 
 
@@ -147,7 +144,7 @@ float: right;
                                 console.log(data)
                                 let g = ''
                                 for(var k of data.ads){
-                                        g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' style='float:right;' onclick='add_image(${k.id})'>Add Image(s)</button></li>`
+                                        g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' style='float:right;' data-toggle="modal" data-target="#exampleModal" onclick='add_image(${k.id},${k.name})'>Add Image(s)</button></li>`
                                 }
                                 $('#ads').html(g)
                         }
@@ -189,8 +186,29 @@ float: right;
         
         
 
-        const add_image =(i)=>{
+        const add_image =(i,x)=>{
                 console.log(i)
+                `<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">${x}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>`
         }
         
+
+
 </script>
