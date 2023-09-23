@@ -100,8 +100,10 @@
 
 <style>
       video{
-        width: 720px; 
-        height: 480px;
+       /* width: 720px; 
+        height: 480px;*/
+        width:75%;
+        height: 75%;
 /*        border: 1px solid #666;*/
 float: right;
       }
