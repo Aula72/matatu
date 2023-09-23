@@ -14,7 +14,9 @@
                 </div>
         </div> 
 
-        <video id="videoPlayer" src="https://youtu.be/VETeteonCec" autoplay autobuffer controls />
+        <video id="" autoplay autobuffer controls>
+                <source  type="video/mp4" id="videoPlayer">
+        </video>
         </div>
     </div>
         <div class="row" style="background-color:red; height: 25%;">
