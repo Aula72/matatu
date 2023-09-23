@@ -147,11 +147,11 @@ float: right;
                                 let g =ol = ''
                                 for(var k of data.ads){
                                         g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' style='float:right;' data-toggle="modal" data-target="#exampleModal${k.id}">Add Image(s)</button></li>`
-                                        ol += `<div class="modal fade" id="exampleModal${k.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        ol += `<div class="modal fade" id="exampleModal${k.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel${k.id}" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">${k.name}</h5>
+        <h5 class="modal-title" id="exampleModalLabel${k.id}">${k.name}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
