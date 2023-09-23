@@ -22,7 +22,20 @@ switch ($method) {
 			$my_adds = [];
 			$ads = make_query('select * from ad');
 			foreach($ads->fetchAll(PDO::FETCH_ASSOC) as $ad){
-				array_push($my_adds, $ad);
+				$y = make_query("select * from ad_img where ad_id=:f",[':f'=>$ad['id']]);
+				$i = [];
+				foreach($y->fetchAll(PDO::FETCH_ASSOC) as $yi){
+					array_push($i, $yi);
+				}
+				$p['ad_status']=$ad["ad_status"];
+				$p['ad_type']=$ad["ad_type"];
+				$p['added_on']=$ad["added_on"];
+				$p['id']=$ad["id"];
+				$p['name']=$ad["name"];
+				$p['p_id']=$ad["p_id"];
+				$p['user_id']=$ad["user_id"];
+				$p['pics'] = $i;
+				array_push($my_adds, $p);
 			}
 			$msg["ads"] = $my_adds;
 		}

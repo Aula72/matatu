@@ -1,12 +1,13 @@
 <?php
-
+// error_reporting(~E_WARNING, ~E_NOTICE);
+error_reporting(E_ERROR | E_PARSE);
 include_once file_exists("../connections.php")?"../connections.php":"connections.php";
 
 
 function make_query($q, $p=[]){
     global $conn;
 	try{
-        $t = $conn->prepare($q,[PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+        $t = $conn->prepare($q);
         $t->execute($p);
     }catch(\PDOException $e){
         $err["message"] = $e->getMessage();
@@ -30,9 +31,9 @@ function write_2_file($file, $txt){
 function create_token($user){
     $token = md5($user.str_shuffle( date('m/d/Y h:i:s a', time())));
     $r = make_query("select * from user_token where user_id=:id",$user);
-    if($r->rowCount()>0){
-        make_query("delete from user_token where user_id=:ui",[':ui'=>$user]);
-    }
+    // if($r->rowCount()>0){
+    make_query("delete from user_token where user_id=:ui",[':ui'=>$user]);
+    // }
     make_query("insert into user_token set user_id=:u, token=:i",[':u'=>$user,':i'=>$token]);
 
     return $token;

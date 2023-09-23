@@ -1,10 +1,10 @@
 <script type="text/javascript" src="/assets/js/jquery.multiple-upload.js"></script>
 <div id="drive">
         <div class="row">
-              <div class="col-md-4" style="background-color:green; height:75%">
+              <div class="col-4" style="background-color:green; width: 25wh; height: 100vh;">
                       <?php include_once "incs/side-ad.php";?>
               </div>
-                <div class="col-md-8" style="height: 75%;">
+                <div class="col-8" style="height: 55vh; ">
          
 
         <video id="videoPlayer" autoplay autobuffer controls>
@@ -16,7 +16,7 @@
    
 
     <div class="row">
-        <div class="col-12" style="background-color:red; height: 20%;">
+        <div class="col-12" style="height: 45vh; width:75wh">
         <?php include_once "incs/botton-ad.php";?>
     </div>    
 </div>
@@ -113,91 +113,7 @@ float: right;
       }
     </style>
 
-<script type="text/javascript">
-        $('#createAdd').on('submit', (e)=>{
-                e.preventDefault()
 
-                let data = {
-                        "ad_status":$('#ad_status').val(),
-                        "p_id":$('#p_id').val(),
-                        "name":$('#name').val(),
-                        "ad_type":$('#ad_type').val(),
-                }
-
-                $.ajax({
-                        url:`${base_url}/apis/ads.php`,
-                        method: 'POST',
-                        headers,
-                        data:JSON.stringify(data),
-                        success:(data, status)=>{
-                                list_ads();
-                        }
-                })
-        })
-
-        logged_in();
-        title('Home')
-        const list_ads = () =>{
-                        $.ajax({
-                        url:`${base_url}/apis/ads.php`,
-                        method:'get',
-                        headers,
-                        success:(data, status)=>{
-                                console.log(data)
-                                let g  = ''
-                                for(var k of data.ads){
-                                        g += `<li class='list-group-item'>${k.name}<button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#ad${k.id}" style='float:right'>Add Image(s)</button></li>`
-                                       
-                                }
-                                $('#ads').html(g)
-                                
-                        }
-                        })
-                }
-
-        if(localStorage.getItem('type') == 2){
-                $('#admin').hide()
-
-                $.ajax({
-                url: `${base_url}/apis/videos.php`,
-                method:'get',
-                headers,
-                success:(data, status)=>{
-                        console.log(data)
-                        var nextVideo = data.videos; 
-                        
-        
-                        var curVideo = 0; 
-
-                        var videoPlayer = document.getElementById('videoPlayer'); 
-                        videoPlayer.src = `${nextVideo[0]['video_url']}`;
-                        videoPlayer.onended = function(){ 
-                        if(curVideo == 0){ 
-                                videoPlayer.src = `${nextVideo[1]}`; 
-                                curVideo = 1; 
-                        } else if(curVideo == 1){ 
-                                videoPlayer.src = nextVideo[0]; curVideo = 0; 
-                        } 
-                        } 
-                }
-                })
-                list_ads()
-        }else{
-                $('#drive').hide()
-                list_ads()
-                
-        }
-        
-        
-
-        const add_image =(i,x)=>{
-                console.log(i)
-                
-        }
-        
-
-
-</script>
 
 
 
@@ -216,7 +132,7 @@ foreach($cv->fetchAll() as $c){
         </button>
       </div>
       <div class="modal-body">
-        <form action="/upload.php?type=ad_photo" method="post">
+        <form action="/upload.php?type=ad_photo" method="post" enctype="multipart/form-data">
                 <input type='hidden' name='ad_id' value='<?php echo $c['id'];?>'>
                 <div class='form-group mb-2'>
                 <input type='file' name='the_file' class='form-control' accept="image/png,image/jpg,image/jpeg">
@@ -234,3 +150,6 @@ foreach($cv->fetchAll() as $c){
 <?php 
 }
 ?>
+
+
+<script type="text/javascript" src="/assets/js/main.js?version=<?php echo md5(rand(100, 9999));?>"></script>

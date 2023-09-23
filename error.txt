@@ -1,0 +1,5 @@
+23-09-2023 21:22:59>>>{"message":"SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'user_code' at row 1","file":"\/home\/aula\/Documents\/matatu\/apis\/helper.php","line":10,"code":"22001"}
+23-09-2023 23:15:48>>>{"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ad_type' in 'field list'","file":"\/home\/aula\/Documents\/matatu\/apis\/helper.php","line":11,"code":"42S22"}
+23-09-2023 23:16:06>>>{"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ad_type' in 'field list'","file":"\/home\/aula\/Documents\/matatu\/apis\/helper.php","line":11,"code":"42S22"}
+23-09-2023 23:16:58>>>{"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ad_type' in 'field list'","file":"\/home\/aula\/Documents\/matatu\/apis\/helper.php","line":11,"code":"42S22"}
+23-09-2023 23:17:38>>>{"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'","file":"\/home\/aula\/Documents\/matatu\/apis\/helper.php","line":11,"code":"42S22"}

@@ -1,8 +1,8 @@
 <?php
 
-// define('DB_NAME', 'kebera_matatu');
+// define('DB_NAME', 'matatu_db');
 // define('DB_USER', 'root');
-// define('DB_PSW', 'D4e@x71[T7]t');
+// define('DB_PSW', '');
 // define('DB_HOST', 'localhost');
 
 const DB_HOST = "localhost";

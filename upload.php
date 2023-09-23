@@ -16,6 +16,7 @@
     $fileExtension = strtolower(end(explode('.',$fileName)));
 
     // die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension, "user_id"=>$user_id]));
+    // die(json_encode($_FILES));
     $normalText = $fileName;
     $fileName = md5($fileName.rand(1000,9999)).'.'.$fileExtension;
 
@@ -32,6 +33,7 @@
     }else if($type=='ad_photo'){
       $id = $_POST['ad_id'];
       $ur = "/uploads/ad-photos/$fileName";
+      // die(json_encode(["name"=>$ur, "ext"=>$fileExtension]));
       make_query("insert into ad_img set ad_id=:id, uri=:uri",[':id'=>$id, 'uri'=>$ur]);
       $uploadDirectory .= 'ad-photos/';
       header('location: /');
