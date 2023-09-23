@@ -100,6 +100,8 @@
   </div>
 </div>
 
+
+<div id="modal_region"></div>
 <style>
       video{
        /* width: 720px; 
@@ -142,11 +144,37 @@ float: right;
                         headers,
                         success:(data, status)=>{
                                 console.log(data)
-                                let g = ''
+                                let g =ol = ''
                                 for(var k of data.ads){
                                         g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' style='float:right;' data-toggle="modal" data-target="#exampleModal" onclick='add_image(${k.id},${k.name})'>Add Image(s)</button></li>`
+                                        ol += `<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">${k.name}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="uploads.php?ad_photo">
+                <input type='hidden' name='ad_id' value='${k.id}'>
+                <div class='form-group mb-2'>
+                <input type='file' name='the_file' class='form-control'>
+                </div>
+                <input type='submit' value='Submit' name='submit'/>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>`
                                 }
                                 $('#ads').html(g)
+                                $("#modal_region").html(ol)
                         }
                         })
                 }
@@ -188,25 +216,7 @@ float: right;
 
         const add_image =(i,x)=>{
                 console.log(i)
-                `<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">${x}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>`
+                
         }
         
 
