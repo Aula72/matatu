@@ -1,6 +1,6 @@
 <script type="text/javascript" src="/assets/js/jquery.multiple-upload.js"></script>
 <div id="drive">
-   <div class="col-md-4" style="background-color:green;">side adss</div>
+   <div class="col-md-4" style="background-color:green; height:75%">side adss</div>
 </div>
 <div class="col-md-8" style="height: 75%;">
          
