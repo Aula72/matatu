@@ -13,9 +13,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/video">My Videos</a>
         </li>
-        <!-- <li class="nav-item">
+        <!--  <li class="nav-item">
           <a class="nav-link" href="/video">Upload Video</a>
-        </li> -->
+        </li> --> 
         <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>
         </li>
