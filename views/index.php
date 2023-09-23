@@ -103,7 +103,7 @@
         width: 720px; 
         height: 480px;
 /*        border: 1px solid #666;*/
-float: left;
+float: right;
       }
     </style>
 
