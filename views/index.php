@@ -167,8 +167,8 @@
 
 <style>
       video{
-        width: 1280px; 
-        height: 720px;
+        width: 720px; 
+        height: 480px;
         border: 1px solid #666;
       }
     </style>
