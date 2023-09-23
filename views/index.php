@@ -216,12 +216,12 @@ foreach($cv->fetchAll() as $c){
         </button>
       </div>
       <div class="modal-body">
-        <form action="uploads.php?ad_photo">
+        <form action="uploads.php?ad_photo" method="post">
                 <input type='hidden' name='ad_id' value='<?php echo $c['id'];?>'>
                 <div class='form-group mb-2'>
                 <input type='file' name='the_file' class='form-control'>
                 </div>
-                <input type='submit' value='Submit' name='submit'/>
+                <input type='submit' class="btn btn-primary btn-sm" value='Submit' name='submit'/>
         </form>
       </div>
       <div class="modal-footer">
