@@ -219,7 +219,7 @@ foreach($cv->fetchAll() as $c){
         <form action="uploads.php?ad_photo" method="post">
                 <input type='hidden' name='ad_id' value='<?php echo $c['id'];?>'>
                 <div class='form-group mb-2'>
-                <input type='file' name='the_file' class='form-control'>
+                <input type='file' name='the_file' class='form-control' accept="image/png,image/jpg,image/jpeg">
                 </div>
                 <input type='submit' class="btn btn-primary btn-sm" value='Submit' name='submit'/>
         </form>
