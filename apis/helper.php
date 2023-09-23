@@ -52,6 +52,18 @@ function delete_token(){
     make_query("delete from user_token where token=:t",[':t'=>$t]);
 }
 
+function me_or_admin(){
+    $r = get_token_from_id();
+    $check = make_query("select * from user where id=:id",[':id'=>$r]);
+    if($check->rowCount()>0){
+        $v = $check->fetch();
+        if($v['user_id']==$r || $v['user_type']==1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
 function user_exists($user){
 	$x = make_query("select * from user where username=:u or phone=:u or email=:u", [':u'=>$user]);
 	if($x->rowCount()>0){

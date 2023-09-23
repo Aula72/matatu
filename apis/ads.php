@@ -64,10 +64,15 @@ switch ($method) {
 		}
 		break;
 	case "DELETE":
-		$q = "delete from ad where id=:ad_id";
-		make_query($q, [':ad_id'=>$id]);
-		$msg['status'] = 1;
-		$msg['message'] = 'Ad '.DELETE;
+		me_or_admin();
+		if(me_or_admin()){
+			make_query("delete from ad_img where ad_id=:c",[':c'=>$id]);
+			$q = "delete from ad where id=:ad_id";
+			make_query($q, [':ad_id'=>$id]);
+			$msg['status'] = 1;
+			$msg['message'] = 'Ad '.DELETE;
+		}
+		
 		break;
 	default:
 		// code...

@@ -32,7 +32,7 @@ const list_ads = () =>{
                 console.log(data)
                 let g  = ''
                 for(var k of data.ads){
-                        g += `<li class='list-group-item'>${k.name}<button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#ad${k.id}" style='float:right'>Add Image(s)</button></li>`
+                        g += `<li class='list-group-item'>${k.name}<div style='float:right;'><button type="button" class="btn btn-warning btn-sm m-1" data-bs-toggle="modal" data-bs-target="#ad${k.id}" >Add Image(s)</button><button type="button" class="btn btn-danger btn-sm m-1" onclick='delete_ad(${k.id})'>Remove</button></div></li>`
                        
                 }
                 $('#ads').html(g)
@@ -87,7 +87,19 @@ const add_image =(i,x)=>{
         
 }
         
-
+const delete_ad =(i)=>{
+  let c = confirm("Are sure you want to delete this add?")
+  if(c){
+    $.ajax({
+      url:`${base_url}/apis/ads.php?id=${i}`,
+      method:'delete',
+      headers,
+      success:(data, status)=>{
+        list_ads();
+      }
+    })
+  }
+}
 
 $(document).ready(()=>{
   $.ajax({

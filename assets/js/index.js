@@ -26,3 +26,13 @@ const logged_in =() =>{
 const title = (t) =>{
 	document.title = `${t} - Matatu`;
 }
+
+$(document).ready((e)=>{
+	let k = localStorage.getItem('type')
+
+	if(k==1){
+		$('#nav_drive').hide()
+	}else{
+		$('#nav_admin').hide()
+	}
+})

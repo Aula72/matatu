@@ -15,6 +15,7 @@
         </div>
 </div>
 <script type="text/javascript">
+	title("My Videos")
 	$.ajax({
 		url:`${base_url}/apis/videos.php`,
 		method:"GET",

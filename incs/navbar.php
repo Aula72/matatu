@@ -11,7 +11,10 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/video">My Videos</a>
+          <a class="nav-link" href="/video" id='nav_drive'>My Videos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/my-ads" id='nav_admin'>My Ads</a>
         </li>
         <!--  <li class="nav-item">
           <a class="nav-link" href="/video">Upload Video</a>
