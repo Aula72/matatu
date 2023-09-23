@@ -1,6 +1,7 @@
 <script type="text/javascript" src="/assets/js/jquery.multiple-upload.js"></script>
 <div id="drive">
    <div class="col-md-4">side adss</div>
+</div>
 <div class="col-md-8" style="height: 75%;">
         <div class="row mt-2 mb-2" >
                 <div class="col-md-6"></div>
@@ -18,6 +19,7 @@
                 <!-- <source  type="video/mp4" id=""> -->
         </video>
         </div>
+</div>
     </div>
         <div class="row" style="background-color:red; height: 25%;">
         bottom adds
