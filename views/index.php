@@ -146,7 +146,7 @@ float: right;
                                 console.log(data)
                                 let g  = ''
                                 for(var k of data.ads){
-                                        g += `<li class='list-group-item'>${k.name}<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ad${k.id}">Add Image(s)</button></li>`
+                                        g += `<li class='list-group-item'>${k.name}<button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#ad${k.id}" style='float:right'>Add Image(s)</button></li>`
                                        
                                 }
                                 $('#ads').html(g)
