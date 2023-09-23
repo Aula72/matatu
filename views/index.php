@@ -1,8 +1,8 @@
 <script type="text/javascript" src="/assets/js/jquery.multiple-upload.js"></script>
 <div id="drive">
-   <div class="col-md-4" style="background-color:green; height:75%">side adss</div>
-</div>
-<div class="col-md-8" style="height: 75%;">
+        <div class="row">
+              <div class="col-md-4" style="background-color:green; height:75%">side adss</div>
+                <div class="col-md-8" style="height: 75%;">
          
 
         <video id="videoPlayer" autoplay autobuffer controls>
@@ -10,12 +10,15 @@
         </video>
         </div>
 </div>
-    </div>
-        <div class="row" style="background-color:red; height: 25%;">
+        </div>
+   
+
+    <div class="row">
+        <div class="col-12" style="background-color:red; height: 25%;">
         bottom adds
     </div>    
 </div>
-</div>
+
 
 <div id="admin" class="m-2">
        <div class="row mt-2 mb-2" >
