@@ -146,7 +146,7 @@ float: right;
                                 console.log(data)
                                 let g  = ''
                                 for(var k of data.ads){
-                                        g += `<li class='list-group-item'>${k.name}<button class='btn btn-sm btn-warning' type='button' style='float:right;' data-toggle="modal" data-target="#exampleModal${k.id}">Add Image(s)</button></li>`
+                                        g += `<li class='list-group-item'>${k.name}<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ad${k.id}">Add Image(s)</button></li>`
                                        
                                 }
                                 $('#ads').html(g)
@@ -206,11 +206,11 @@ float: right;
 $cv = make_query("select * from ad");
 foreach($cv->fetchAll() as $c){
 ?>
-<div class="modal fade" id="exampleModal<?php echo $c['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel<?php echo $c['id'];?>" aria-hidden="true">
+<div class="modal fade" id="ad<?php echo $c['id'];?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  role="dialog" aria-labelledby="adLabel<?php echo $c['id'];?>" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel<?php echo $c['id'];?>"><?php echo $c['name']; ?></h5>
+        <h5 class="modal-title" id="adLabel<?php echo $c['id'];?>"><?php echo $c['name']; ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
