@@ -30,6 +30,7 @@
     }else if($type=='user_audio'){
       $uploadDirectory .= 'user-audios/';
     }else if($type=='ad_photo'){
+      $id = $_POST['ad_id'];
       $ur = "/uploads/ad-photos/$fileName";
       make_query("insert into ad_img set ad_id=:id, uri=:uri",[':id'=>$id, 'uri'=>$ur]);
       $uploadDirectory .= 'ad-photos/';
