@@ -1,7 +1,9 @@
 <script type="text/javascript" src="/assets/js/jquery.multiple-upload.js"></script>
 <div id="drive">
         <div class="row">
-              <div class="col-md-4" style="background-color:green; height:75%">side adss</div>
+              <div class="col-md-4" style="background-color:green; height:75%">
+                      <?php include_one "../botton-ad.php";?>
+              </div>
                 <div class="col-md-8" style="height: 75%;">
          
 
@@ -15,7 +17,7 @@
 
     <div class="row">
         <div class="col-12" style="background-color:red; height: 20%;">
-        bottom adds
+        <?php include_one "../botton-ad.php";?>
     </div>    
 </div>
 
