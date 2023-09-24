@@ -24,11 +24,26 @@
 			// console.log(data)
 			let po = ''
 			for(let k of data.videos){
-				po+=`<li class='mb-1'>${k.video_name}<button class='btn btn-sm btn-danger' style='float:right;'>Remove</button></li>`
+				po+=`<li class='mb-1'>${k.video_name}<button class='btn btn-sm btn-danger' style='float:right;' onclick='delete_video(${k.id})'>Remove</button></li>`
 			}
 			$('#videos').html(po);
 		}
 	})
+
+  const delete_video = (i) =>{
+    let c = confirm("Are you sure you want to delete this video, recovery is not possible")
+    if(c){
+      $.ajax({
+        url:`${base_url}/apis/videos.php?id=${i}`,
+        method:'delete',
+        headers,
+        success:(data,status)=>{
+          console.log(data)
+          // window.location = '/video'
+        }
+      })
+    }
+  }
 </script>
 
 

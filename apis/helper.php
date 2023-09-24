@@ -54,14 +54,19 @@ function delete_token(){
 
 function me_or_admin(){
     $r = get_token_from_id();
+    
     $check = make_query("select * from user where id=:id",[':id'=>$r]);
     if($check->rowCount()>0){
-        $v = $check->fetch();
-        if($v['user_id']==$r || $v['user_type']==1){
+        // die(json_encode($check->fetch(PDO::FETCH_ASSOC)));
+        $v = $check->fetch(PDO::FETCH_ASSOC);
+        // die(json_encode(['r'=>$r, 'user_id'=>$v['id'],'t'=>$v['user_type'], 'user_'=>intval($v['id'])==intval($r)]));
+        if(intval($v['id'])===intval($r) || $v['user_type']==='1'){
             return true;
         }else{
             return false;
         }
+    }else{
+        return false;
     }
 }
 function user_exists($user){

@@ -64,8 +64,13 @@ switch ($method) {
 		}
 		break;
 	case "DELETE":
-		me_or_admin();
+		// me_or_admin();
 		if(me_or_admin()){
+			//delete images
+			$tr = make_query("select * from ad_img where ad_id=:c",[':c'=>$id]);
+			foreach($tr->fetchAll() as $d){
+				unlink("..{$d['uri']}");
+			}
 			make_query("delete from ad_img where ad_id=:c",[':c'=>$id]);
 			$q = "delete from ad where id=:ad_id";
 			make_query($q, [':ad_id'=>$id]);
