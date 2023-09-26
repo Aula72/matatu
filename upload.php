@@ -27,7 +27,7 @@
       // die(json_encode(['name'=>$fileName, 'size'=>$fileSize, 'type'=>$fileType, 'extension'=>$fileExtension, "user_id"=>$user_id,"name"=>$video_name, "url"=>$video_url]));
       make_query("insert into videos set user_id=:user_id, video_name=:v, video_url=:url",[':user_id'=>$user_id, ':v'=>$video_name, ":url"=>$video_url]);
       $uploadDirectory .= 'user-videos/';
-      header('location: /');
+      // header('location: /');
     }else if($type=='user_audio'){
       $uploadDirectory .= 'user-audios/';
     }else if($type=='ad_photo'){
@@ -36,7 +36,7 @@
       // die(json_encode(["name"=>$ur, "ext"=>$fileExtension]));
       make_query("insert into ad_img set ad_id=:id, uri=:uri",[':id'=>$id, 'uri'=>$ur]);
       $uploadDirectory .= 'ad-photos/';
-      header('location: /');
+      
     }else{
       $uploadDirectory .= 'avatars/';
     }
@@ -75,6 +75,7 @@
     }
 
     if($msg['status']){
-      header("location: upload.php?type=$type");
+      header('location: /');
+      // header("location: upload.php?type=$type");
     }
 ?>

@@ -203,6 +203,7 @@ body {
           var ms = new Date().getTime() + 86400000;
           var tomorrow = new Date(ms);
           document.cookie = `user_key=${data.token}; expires=${tomorrow}; path=/`;
+          document.cookie = `user_type=${data.user_type}; expires=${tomorrow}; path=/`;
           // localStorage.setItem('nwp',data.token)
           localStorage.setItem('type',data.user_type)
           localStorage.setItem('auth', data.token)
